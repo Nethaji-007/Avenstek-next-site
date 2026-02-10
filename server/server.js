@@ -2,8 +2,13 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
+const connectDB = require('./config/db');
 
-dotenv.config();
+// Load environment variables from .env.local
+dotenv.config({ path: path.join(__dirname, '../.env.local') });
+
+// Connect to MongoDB
+connectDB();
 
 const app = express();
 
@@ -15,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, '../public/uploads')));
 
 // Routes (add your routes here)
-// app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/auth', require('./routes/authRoutes'));
 // app.use('/api/content', require('./routes/contentRoutes'));
 
 // Health check route
@@ -25,6 +30,12 @@ app.get('/', (req, res) => {
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'Server is running!' });
+});
+
+// Error handling middleware (MUST be last)
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: err.message || 'Something went wrong!' });
 });
 
 const PORT = process.env.PORT || 5000;
