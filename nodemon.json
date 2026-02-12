@@ -1,0 +1,10 @@
+{
+  "watch": ["server"],
+  "ext": "ts,json",
+  "ignore": ["node_modules"],
+  "exec": "ts-node --transpile-only --project tsconfig.server.json server/server.ts",
+  "env": {
+    "TS_NODE_PROJECT": "tsconfig.server.json",
+    "NODE_ENV": "development"
+  }
+}
