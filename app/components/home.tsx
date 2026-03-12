@@ -59,36 +59,29 @@ const Hero = () => {
   }, [isTransitioning]); 
 
   return (
-    <section className="relative h-screen bg-black text-white overflow-hidden">
-      <div className="absolute inset-0">
-        {carouselImages.map((src, index) => (
-          <div
-            key={src}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-              index === currentIndex 
-                ? "opacity-100 scale-100" 
-                : "opacity-0 scale-110"
-            }`}
-          >
-            <Image
-              src={src}
-              alt={`Slide ${index + 1}`}
-              fill
-              className="object-cover"
-              priority={index === 0}
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/40"></div>
-          </div>
-        ))}
-      </div>
-
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-white to-transparent animate-pulse"></div>
-        <div className="absolute top-0 left-2/4 w-px h-full bg-gradient-to-b from-transparent via-white to-transparent animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-0 left-3/4 w-px h-full bg-gradient-to-b from-transparent via-white to-transparent animate-pulse" style={{animationDelay: '2s'}}></div>
-      </div>
-
+  <section className="relative h-screen bg-black text-white overflow-hidden">
+    <div className="absolute inset-0">
+      {carouselImages.map((src, index) => (
+        <div
+          key={src}
+          className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+            index === currentIndex 
+              ? "opacity-100 scale-100" 
+              : "opacity-0 scale-110"
+          }`}
+        >
+          <Image
+            src={src}
+            alt={`Slide ${index + 1}`}
+            fill
+            className="object-cover"
+            priority={index === 0}
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/40"></div>
+        </div>
+      ))}
+    </div>
       <button
         onClick={goToPrevious}
         className="hidden lg:block absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 z-40 text-white/50 hover:text-white transition-all duration-300 group p-4 cursor-pointer"
@@ -204,31 +197,32 @@ const AboutSection: React.FC = () => {
     <section className="py-16 md:py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-         
-          <div
-            ref={ref}
-            className={`relative w-full h-[450px] md:h-[600px] transition-all duration-1000 ease-out ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
-            }`}
-          >
-            
-           <div className="absolute top-0 left-[10%] sm:left-[18%] md:left-[8%] w-[70%] sm:w-[60%] md:w-[65%] h-[70%] md:h-[80%] z-10 rounded-[2.5rem] overflow-hidden shadow-xl animate-float">
-        <img
-          src="/ab-2.jpg"
-          alt="Nanlogical workspace"
-         className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-        />
-      </div>
-
-           
-           <div className="relative md:absolute md:bottom-0 md:right-[10%] w-full md:w-[60%] h-[260px] md:h-[70%] z-20 rounded-[2.5rem] overflow-hidden hover:animate-float">
+        <div
+  ref={ref}
+  className={`relative w-full transition-all duration-1000 ease-out ${
+    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
+  }`}
+>
+ 
+  <div className="flex flex-col md:block relative h-auto md:h-[600px] gap-6">
+    
+  
+    <div className="relative md:absolute md:top-0 md:left-[5%] w-full md:w-[70%] h-[300px] sm:h-[400px] md:h-[75%] z-10 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-xl animate-float">
+      <img
+        src="/ab-2.jpg"
+        alt="Nanlogical workspace"
+        className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+      />
+    </div>
+          <div className="relative md:absolute md:bottom-0 md:right-0 w-full md:w-[65%] h-[260px] sm:h-[350px] md:h-[65%] z-20 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl hover:animate-float md:border-8 md:border-white">
               <img
                 src="/ab-1.jpg"
                 alt="Client meeting"
-               className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
             </div>
           </div>
+        </div>
 
          
           <div
