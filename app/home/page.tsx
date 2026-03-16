@@ -1,4 +1,5 @@
 "use client";
+import 'aos/dist/aos.css';
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -151,8 +152,8 @@ const Hero = () => {
           md:w-auto px-2 md:px-8 py-3 
           text-xs md:text-base 
           bg-orange-500 text-white font-semibold 
-          rounded-lg hover:bg-orange-600 
-          transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/30">
+          rounded-lg hover:bg-#ed502e-600 
+          transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-#ed502e-500/30">
           Get Started
         </button>
 
@@ -214,7 +215,7 @@ const AboutSection: React.FC = () => {
         className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
       />
     </div>
-          <div className="relative md:absolute md:bottom-0 md:right-0 w-full md:w-[65%] h-[260px] sm:h-[350px] md:h-[65%] z-20 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl hover:animate-float md:border-8 md:border-white">
+          <div className="relative md:absolute md:bottom-0 md:right-0 w-full md:w-[65%] h-[260px] sm:h-[350px] md:h-[65%] z-20 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl hover:animate-float">
               <img
                 src="/ab-1.jpg"
                 alt="Client meeting"
@@ -296,9 +297,9 @@ const ServicesSection = () => {
     { title: "UI & UX", description: "We afford Best Designs to boost up your brand and inscribe through Visual experience.", icon: Palette },
     { title: "Clone Scripts", description: "We furnish clone scripts of your demanded application with more efficiency", icon: Layers },
     { title: "Software Testing", description: "Advance the standard of your software by gaining the software testing from our team", icon: ShieldCheck },
-    { title: "Web Application Design & Development", description: "Modern, cost-effective building blocks for applications.", icon: Monitor },
-    { title: "Mobile application Design and Development", description: "We present Best Android and IOS mobile application for your business to reach world class level", icon: Smartphone },
-    { title: "E-commerce Design & Development", description: "We give perfect application for your business with best customer satisfaction", icon: ShoppingCart },
+    { title: "Web Application Design ", description: "Modern, cost-effective building blocks for applications.", icon: Monitor },
+    { title: "Mobile app Design ", description: "We present Best Android and IOS mobile application for your business ", icon: Smartphone },
+    { title: "E-commerce Design ", description: "We give perfect application for your business with best customer satisfaction", icon: ShoppingCart },
   ];
 
   return (
@@ -315,9 +316,10 @@ const ServicesSection = () => {
             <span className="inline-block px-4 py-1.5 mb-6 text-orange-600 font-bold text-xs bg-orange-50 rounded-md uppercase tracking-[0.2em]">
               Our Services
             </span>
-            <h2 className="text-2xl md:text-3xl font-Poppins font-bold text-gray-900 leading-tight mb-8">
+            <h2 className="text-4xl md:text-3xl font-extrabold text-[#1e3a5f] mb-6 leading-tight">
               CHECK OUR SERVICES
-            </h2>      <div className="text-gray-600 text-lg mb-10 space-y-4">
+            </h2>      
+            <div className="text-gray-600 text-lg mb-10 space-y-4">
               <p>
                 Adipiscing elit, sed do euismod tempor incidunt ut labore et dolore magna aliqua. 
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco.
