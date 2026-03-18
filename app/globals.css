@@ -94,6 +94,7 @@ button:focus-visible {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  
 }
 .portfolio-2,
 .portfolio-7 {
@@ -135,7 +136,6 @@ button:focus-visible {
   margin-left: auto;
   margin-right: auto;
 }
- 
 /* ── Card / overlay base ── */
 .hold-picture {
   position: relative;
@@ -305,7 +305,7 @@ button:focus-visible {
 }
 
 /* ── 768px ── */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .portfolio-8,
   .portfolio-9,
   .portfolio-10 {
@@ -316,8 +316,47 @@ button:focus-visible {
   }   
 }
 
+/* ── 1440px (Large Desktop) ── */
+@media screen and (min-width: 1440px) {
+  .projects {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .header-pic {
+    gap: 24px;
+    padding: 20px 40px;
+  }
+
+  .header2-pic {
+    gap: 24px;
+    padding: 20px 40px;
+  }
+
+  .pic-hold {
+    padding: 0;
+  }
+
+  .portfolio-8,
+  .portfolio-9,
+  .portfolio-10 {
+    height: 240px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .project-heading {
+    font-size: 5rem;
+  }
+ 
+  .container {
+    max-width: 1400px !important;
+    width: 100%;
+  }
+
+}
 /* ── 1024px ── */
-@media screen and (min-width: 1024px) and (max-width: 1439px) {
+@media screen and (min-width: 1023px) and (max-width: 1439px) {
   .portfolio-8,
   .portfolio-9,
   .portfolio-10 {
