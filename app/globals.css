@@ -362,3 +362,15 @@ button:focus-visible {
   border-color: #ff5f15;
   color: white;
 }
+
+
+@keyframes navbarSlideDown {
+  0% {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
