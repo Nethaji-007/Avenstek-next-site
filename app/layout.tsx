@@ -1,4 +1,5 @@
 import "./globals.css";
+import Navbar from "./components/navbar";
 import Footer from "./components/Footer";
 import type { Metadata } from "next";
 
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-white text-black">
+        <Navbar />
         {children}
         <Footer />
       </body>

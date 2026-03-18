@@ -362,7 +362,12 @@ button:focus-visible {
   background: #ff5f15;
   border-color: #ff5f15;
   color: white;
-}.swiper-button-next,
+}
+
+
+
+
+.swiper-button-next,
 .swiper-button-prev {
   background: white !important;
   width: 35px !important;
