@@ -15,13 +15,13 @@ export default function Projects() {
         <h1 className="project-heading white text-3xl sm:text-4xl sm:h-full w-full ">Our Projects</h1>
       </div>
       <div className="mt-2">
-         <CiHome className="home"/><a href="" className="">Home</a>
+         <a href="" className="">Home</a>
          <a href="" className="pro ml-4">Projects</a>
       </div>
     </section>
     <section>
       <Container className="mt-20 ">
-      <Row className="header-pic grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-5">
+      <Row className="header-pic grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-4 p-5">
         <Col className="pic-hold flex:1 ">
         <div className="holdee1 display:flex flex-col items-center justify-center">
          <div className="hold-picture ">
@@ -70,7 +70,7 @@ export default function Projects() {
           </div>
           </div>
          </div>
-         <div className="hold-picture ">
+         <div className="hold-picture">
           <img className="portfolio-5 mt-4" src="project5.jpg" alt="Project 1"/>
            <div className="icon"><GoArrowUpRight/></div>
           <div className="overlay opacity-100 lg:opacity-0">
@@ -109,7 +109,7 @@ export default function Projects() {
       </Row>
     </Container>
     <Container>
-      <Row className="header2-pic grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 mt-12 m-5 ">
+        <Row className="header2-pic grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-4 mt-12 m-5 ">
         <Col className="pic-hold flex:1">
         <div className="hold-picture">
           <img className="portfolio-8" src="project8.jpg" alt="Project 1"/>
