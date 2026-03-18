@@ -364,13 +364,59 @@ button:focus-visible {
 }
 
 
-@keyframes navbarSlideDown {
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  background: white !important;
+  width: 35px !important;
+  height: 35px !important;
+  border-radius: 50% !important;
+  color: #1981cd !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 4px !important;   
+  font-weight: bold;
+}
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 10s linear infinite;
+}
+
+.logo {
+  width: 220px;
+  height: 95px;
+  background: white;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes scroll {
   0% {
-    transform: translateY(-80px);
-    opacity: 0;
+    transform: translateX(0);
   }
   100% {
-    transform: translateY(0);
-    opacity: 1;
+    transform: translateX(-50%);
   }
 }

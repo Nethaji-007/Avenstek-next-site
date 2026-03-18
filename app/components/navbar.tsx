@@ -42,14 +42,14 @@ const [openMenu, setOpenMenu] = useState(false);
   return (
     <header className="fixed top-0 left-0 w-full z-50">
 
-      {/* TOP RED BAR */}
-       <div className="max-w-[1200px] mx-auto px-4 ">
+  
+       {/* <div className="max-w-[1200px] mx-auto px-4 ">
 
 
         <div className="hidden lg:flex max-w-[1200px] mx-auto bg-[#f04c41] text-[#ffff] text-sm px-6 py-2 flex justify-between items-center rounded-t-md ">
 
-          {/* Left Contact Info */}
-          <div className="flex items-center gap-6">
+        
+          <div className="flex items-center gap-6"> 
 
             <div className="flex items-center gap-2">
               <Clock size={16} />
@@ -68,7 +68,7 @@ const [openMenu, setOpenMenu] = useState(false);
 
           </div>
 
-          {/* Right Section */}
+        
           
 
           <div className="flex items-center gap-4">
@@ -95,23 +95,23 @@ const [openMenu, setOpenMenu] = useState(false);
 </div>
 
         </div>
-      </div>
+      </div> */}
 
 
       
 
- {/* WHITE NAVBAR */}
+
 
 <div
-      className={`w-full z-50 transition-all duration-300 ${
+      className={`w-full z-50 gap-2 transition-all duration-300 ${
         scrolled ? "fixed top-0 left-0 navbar-slide" : ""
       }`}
     >
-      <div className="max-w-[1200px] mx-auto px-4">
+      <div className="max-w-[1200px]  mx-auto px-4">
 
         <div className="bg-white shadow-lg px-6 py-4 flex items-center justify-between rounded-md">
 
-          {/* Logo */}
+        
           <Image
             src="/logo-Nanlogical.png"
             alt="logo"
