@@ -405,27 +405,6 @@ button:focus-visible {
 
 
 
-
-.swiper-button-next,
-.swiper-button-prev {
-  background: white !important;
-  width: 35px !important;
-  height: 35px !important;
-  border-radius: 50% !important;
-  color: #1981cd !important;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 4px !important;   
-  font-weight: bold;
-}
 .swiper-wrapper {
   display: flex;
   align-items: center;

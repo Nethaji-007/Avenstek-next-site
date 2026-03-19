@@ -55,7 +55,7 @@ const [messageError,setMessageError] = useState(false);
 
 let valid = true;
 
-// NAME
+
 if(name){
   setNameError(false)
   if(name.length < 3){
@@ -70,7 +70,7 @@ if(name){
   valid = false
 }
 
-// PHONE
+
 if(number){
   setNumberError(false)
   if(number.length !== 10){
@@ -85,7 +85,7 @@ if(number){
   valid = false
 }
 
-// EMAIL
+
 if(email){
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   if(emailRegex.test(email)){
@@ -101,7 +101,7 @@ if(email){
   valid = false
 }
 
-// SUBJECT WORD COUNT
+
 const subjectWords = subject.trim().split(/\s+/).filter(Boolean).length;
 
 if(subjectWords < 5 || subjectWords > 20){
@@ -111,7 +111,7 @@ if(subjectWords < 5 || subjectWords > 20){
   setSubjectError(false)
 }
 
-// MESSAGE WORD COUNT
+
 const messageWords = message.trim().split(/\s+/).filter(Boolean).length;
 
 if(messageWords < 10 || messageWords > 60){
@@ -121,7 +121,7 @@ if(messageWords < 10 || messageWords > 60){
   setMessageError(false)
 }
 
-// SUCCESS ALERT
+
 if(valid){
   Swal.fire({
     title: "Message Sent Successfully",
@@ -142,7 +142,7 @@ if(valid){
     <section className="min-h-[49rem] lg:min-h-[52rem] font-['Montserrat-SemiBold_0',_sans-serif] bg-[#f5f5f5] py-12 px-4 md:px-10 ">
         <div className="flex flex-col lg:flex-row items-center gap-10">
             <div className="flex-1 h-[35rem] p-4 flex  relative" >
-                <div className=" relative w-[280px] h-[300px] xl:w-[312px] xl:h-[400px] lg:w-[312px] lg:h-[400px] md:w-[450px] md:h-[430px]">
+                <div className=" relative w-[280px] h-[300px] transition-transform duration-700 ease-in-out hover:scale-110 xl:w-[312px] xl:h-[400px] lg:w-[312px] lg:h-[400px] md:w-[450px] md:h-[430px]">
                     <Image 
                         src="/about-img.jpg"
                         alt="Description"
@@ -150,7 +150,7 @@ if(valid){
                         className="object-cover rounded-lg"
                         />
 </div>
-                <div className="hidden xl:block absolute top-[300px] left-[160px] w-[280px] h-[360px]" >
+                <div className="hidden transition-transform duration-700 ease-in-out hover:scale-110 xl:block absolute top-[300px] left-[160px] w-[280px] h-[360px]" >
                      <Image 
                         src="/about-img2.jpg"
                         alt="Description"
@@ -158,7 +158,7 @@ if(valid){
                         className="object-cover rounded-lg"
                         />
                 </div>
-                <div className="hidden xl:block absolute top-[65px] left-[365px] w-[220px] h-[160px]">
+                <div className="hidden transition-transform duration-700 ease-in-out hover:scale-110 xl:block absolute top-[65px] left-[365px] w-[220px] h-[160px]">
                      <Image 
                         src="/about-img3.jpg"
                         alt="Description"
@@ -188,9 +188,9 @@ if(valid){
           Contact Us
         </button>
 
-        <a href="tel:+918838750579" className="text-[#213e6c] flex items-center gap-2">
-          <FaPhone className="text-2xl" />
-          +91 88387 50579
+        <a href="tel:+918838750579" className="text-[#213e6c] flex items-center gap-2 mb-2 ">
+         <div className="border-1 bg-[#ffffff] border-[#c0d0f0] flex items-center justify-center h-12 w-12 rounded-full"> <FaPhone className="text-2xl text-[#142848]" /></div>
+            <span className="text-[#213e6c]">+91 88387 50579</span>
         </a>
 
       </div>
@@ -455,7 +455,7 @@ Marketing
 </section>
     
    <section className="h-auto text-['Montserrat-SemiBold_0',_sans-serif] bg-[#f5f5f5] py-10 px-4">
-  <div className="flex flex-col lg:flex-row gap-6">
+  <div className="flex flex-col lg:flex-row gap-6 p-[4rem]">
 
   
     <div className="flex-1 bg-white p-6 md:p-8 rounded-lg shadow-md">
@@ -531,7 +531,7 @@ onChange={(e)=>setName(e.target.value)}
 className="w-full p-3 h-12 md:h-14 rounded-lg border-2 border-[#c2c2c2] focus:border-[#ed502e] outline-none"
 />
 
-{nameError && <p className="text-red-500 text-sm">Enter Your Name</p>}
+{nameError && <p className="text-red-500 text-sm"> Your Name</p>}
 {nameLenError && <p className="text-red-500 text-sm">Name Must Contain 3 Char</p>}
 
 </div>
@@ -550,7 +550,7 @@ onChange={(e)=>setNumber(e.target.value)}
 className="w-full p-3 h-12 md:h-14 rounded-lg border-2 border-[#c2c2c2] focus:border-[#ed502e] outline-none"
 />
 
-{numberError && <p className="text-red-500 text-sm">Enter Your Phone Number</p>}
+{numberError && <p className="text-red-500 text-sm"> Your Phone Number</p>}
 {numberLenError && <p className="text-red-500 text-sm">Must be 10 digits</p>}
 
 </div>
@@ -571,7 +571,7 @@ onChange={(e)=>setEmail(e.target.value)}
 className="w-full p-3 h-12 md:h-14 rounded-lg border-2 border-[#c2c2c2] focus:border-[#ed502e] outline-none"
 />
 
-{emailError && <p className="text-red-500 text-sm">Enter Your Email</p>}
+{emailError && <p className="text-red-500 text-sm">Your Email</p>}
 {emailRegError && <p className="text-red-500 text-sm">Email Must Contain @ </p>}
 
 </div>
