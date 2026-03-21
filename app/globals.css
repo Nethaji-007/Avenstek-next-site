@@ -447,7 +447,7 @@ button:focus-visible {
 .logo {
   width: 220px;
   height: 95px;
-  background: white;
+  /* background: #f1f1f1;; */
   margin-right: 20px;
   display: flex;
   align-items: center;
