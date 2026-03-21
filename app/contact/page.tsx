@@ -65,7 +65,7 @@ export default function ContactPage() {
     <div className="bg-white min-h-screen">
 
       {/* Header */}
-      <section className="py-16 text-center">
+      <section className="pt-24 py-16 text-center">
         <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-[#f04c41]">
           Contact Us
         </h1>
