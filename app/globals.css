@@ -405,32 +405,34 @@ button:focus-visible {
 
 
 
-
-.swiper-button-next,
-.swiper-button-prev {
-  background: white !important;
-  width: 35px !important;
-  height: 35px !important;
-  border-radius: 50% !important;
-  color: #1981cd !important;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 4px !important;   
-  font-weight: bold;
-}
 .swiper-wrapper {
   display: flex;
   align-items: center;
 }
+/* 🔴 Arrows color + size */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #ed502e !important;
+  transform: scale(0.7); /* 👈 makes arrow smaller */
+}
 
+/* Optional: reduce arrow icon size more precisely */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px !important; /* default ~24px */
+}
+
+/* 🔴 Pagination dots */
+.swiper-pagination-bullet {
+  background: #ed502e !important;
+  opacity: 0.5;
+}
+
+/* 🔴 Active dot */
+.swiper-pagination-bullet-active {
+  background: #ed502e !important;
+  opacity: 1;
+}
 .marquee {
   overflow: hidden;
   width: 100%;
