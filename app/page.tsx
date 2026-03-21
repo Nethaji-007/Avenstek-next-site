@@ -130,7 +130,7 @@ const Hero = () => {
             className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight animate-fade-in-up"
           >
             Best logic for your{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600 animate-gradient">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f04c41] to-[#f04c41] animate-gradient">
               dream works
             </span>
           </h1>
@@ -151,18 +151,18 @@ const Hero = () => {
         <button className="group w-[45%] min-w-[140px] 
           md:w-auto px-2 md:px-8 py-3 
           text-xs md:text-base 
-          bg-orange-500 text-white font-semibold 
-          rounded-lg hover:bg-#ed502e-600 
-          transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-#ed502e-500/30">
+          bg-[#f04c41] text-white font-semibold 
+          rounded-lg hover:bg-[#d4491f] 
+          transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
           Get Started
         </button>
 
         <button className="w-[45%] min-w-[140px] 
           md:w-auto px-2 md:px-8 py-3 
           text-xs md:text-base 
-          bg-transparent border-2 border-orange-500 text-orange-500 
+          bg-transparent border-2 border-[#f04c41] text-[#f04c41] 
           font-semibold rounded-lg 
-          hover:bg-orange-500 hover:text-white 
+          hover:bg-[#f04c41] hover:text-white 
           transition-all duration-300 transform hover:scale-105">
           View Demo
         </button>
@@ -231,7 +231,7 @@ const AboutSection: React.FC = () => {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
             }`}
           >
-            <span className="inline-block px-4 py-1.5 mb-6 text-orange-600 font-bold text-xs bg-orange-50 rounded-md uppercase tracking-[0.2em]">
+            <span className="inline-block px-4 py-1.5 mb-6 text-[#f04c41] font-bold text-xs bg-[#f04c41]/10 rounded-md uppercase tracking-[0.2em]">
               Saving Time
             </span>
             
@@ -265,7 +265,7 @@ const AboutSection: React.FC = () => {
 
             <Link
               href="/about"
-              className="inline-block bg-[#f15a2b] hover:bg-[#d4491f] text-white px-10 py-4 rounded-xl font-bold text-lg transition-all transform hover:-translate-y-1 shadow-lg shadow-orange-200"
+              className="inline-block bg-[#f04c41] hover:bg-[#f04c41] !text-white px-10 py-4 rounded-xl font-bold text-lg transition-all transform hover:-translate-y-1 shadow-lg shadow-orange-200"
             >
               About Us
             </Link>
@@ -313,7 +313,7 @@ const ServicesSection = () => {
           <div className={`lg:w-1/3 lg:sticky lg:top-24 h-fit transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
           }`}>
-            <span className="inline-block px-4 py-1.5 mb-6 text-orange-600 font-bold text-xs bg-orange-50 rounded-md uppercase tracking-[0.2em]">
+            <span className="inline-block px-4 py-1.5 mb-6 text-[#f04c41] font-bold text-xs bg-[#f04c41]/10 rounded-md uppercase tracking-[0.2em]">
               Our Services
             </span>
             <h2 className="text-4xl md:text-3xl font-extrabold text-[#1e3a5f] mb-6 leading-tight">
@@ -348,8 +348,8 @@ const ServicesSection = () => {
                       style={{ transitionDelay: `${index * 150}ms` }}
                     >
                   
-                    <div className="mb-6 w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:bg-orange-500">
-                      <Icon className="w-8 h-8 text-orange-600 transition-colors duration-500 group-hover:text-white" />
+                    <div className="mb-6 w-16 h-16 bg-[#f04c41]/10 rounded-full flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:bg-[#f04c41]">
+                      <Icon className="w-8 h-8 text-[#f04c41] transition-colors duration-500 group-hover:text-white" />
                     </div>
                     
                     <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -360,7 +360,7 @@ const ServicesSection = () => {
                     </p>
                     <a
                       href="#"
-                      className="mt-auto inline-flex items-center gap-1 text-gray-900 font-bold text-xs uppercase tracking-wider hover:text-orange-600 transition-colors group/link"
+                      className="mt-auto inline-flex items-center gap-1 text-gray-900 font-bold text-xs uppercase tracking-wider hover:text-[#f04c41] transition-colors group/link"
                     >
                       Know More
                       <ChevronRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
