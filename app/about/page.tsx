@@ -1,7 +1,7 @@
  "use client";
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay, FreeMode } from "swiper/modules";
+import { Pagination, Navigation, Autoplay, } from "swiper/modules";
 import Swal from "sweetalert2";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -19,13 +19,18 @@ import { CiGrid32 } from "react-icons/ci";
 import { CiLocationOn } from "react-icons/ci";
 import { TfiEmail } from "react-icons/tfi";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { HiOutlineMail } from "react-icons/hi";
-import { IoPersonOutline } from "react-icons/io5";
-import { FaPhoneAlt } from "react-icons/fa";
-import { SiMainwp } from "react-icons/si";
-import { FiSend } from "react-icons/fi";
-import { FaPenAlt } from "react-icons/fa";
-import Image from 'next/image';
+
+import Image from 'next/image';import { useForm } from "react-hook-form";
+import { Clock, MapPin, Phone, User, Mail, Send, Pencil, Info } from "lucide-react";
+
+type FormData = {
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+  agree: boolean;
+};
 export default function About (){
  const [swiperRef, setSwiperRef] = useState(null);
 
@@ -33,111 +38,16 @@ export default function About (){
     "/client-1.webp", "/client-2.webp", "/client-3.webp",
     "/client-4.webp", "/client-5.webp", "/client-6.webp"
   ];
-  const [name,setName] = useState("");
-const [number,setNumber] = useState("");
-const [email,setEmail] = useState("");
-const [subject,setSubject] = useState("");
-const [message,setMessage] = useState("");
+const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>();
 
-const [nameError,setNameError] = useState(false);
-const [nameLenError,setNameLenError] = useState(false);
-
-const [numberError,setNumberError] = useState(false);
-const [numberLenError,setNumberLenError] = useState(false);
-
-const [emailError,setEmailError] = useState(false);
-const [emailRegError,setEmailRegError] = useState(false);
-
-const [subjectError,setSubjectError] = useState(false);
-const [messageError,setMessageError] = useState(false);
-
- const validateForm = () => {
-
-let valid = true;
-
-
-if(name){
-  setNameError(false)
-  if(name.length < 3){
-    setNameLenError(true)
-    valid = false
-  }else{
-    setNameLenError(false)
-  }
-}else{
-  setNameError(true)
-  setNameLenError(false)
-  valid = false
-}
-
-
-if(number){
-  setNumberError(false)
-  if(number.length !== 10){
-    setNumberLenError(true)
-    valid = false
-  }else{
-    setNumberLenError(false)
-  }
-}else{
-  setNumberError(true)
-  setNumberLenError(false)
-  valid = false
-}
-
-
-if(email){
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-  if(emailRegex.test(email)){
-    setEmailRegError(false)
-  }else{
-    setEmailRegError(true)
-    valid = false
-  }
-  setEmailError(false)
-}else{
-  setEmailError(true)
-  setEmailRegError(false)
-  valid = false
-}
-
-
-const subjectWords = subject.trim().split(/\s+/).filter(Boolean).length;
-
-if(subjectWords < 5 || subjectWords > 20){
-  setSubjectError(true)
-  valid = false
-}else{
-  setSubjectError(false)
-}
-
-
-const messageWords = message.trim().split(/\s+/).filter(Boolean).length;
-
-if(messageWords < 10 || messageWords > 60){
-  setMessageError(true)
-  valid = false
-}else{
-  setMessageError(false)
-}
-
-
-if(valid){
-  Swal.fire({
-    title: "Message Sent Successfully",
-    text: "Your message has been sent.",
-    icon: "success",
-    confirmButtonText: "OK"
-  })
-
-  // reset form
-  setName("")
-  setNumber("")
-  setEmail("")
-  setSubject("")
-  setMessage("")
-}
-}
+  const onSubmit = (data: FormData) => {
+    console.log(data);
+    alert("Form Submitted Successfully");
+  };
     return(<>
     <section className="min-h-[49rem] lg:min-h-[52rem] font-['Montserrat-SemiBold_0',_sans-serif] bg-[#f5f5f5] py-12 px-4 md:px-10 ">
         <div className="flex flex-col lg:flex-row items-center gap-10">
@@ -167,7 +77,7 @@ if(valid){
                         /></div> 
             </div>
             <div className="flex-1 max-w-[600px] text-center lg:text-left">
-            <h1 className="text-3xl md:text-4xl font-bold text-[#ed502e] mb-4">About Us</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-[#] mb-4">About Us</h1>
                <p className="text-[#ed502e] mb-2 relative inline-block
         after:content-['']
         after:absolute
@@ -184,7 +94,7 @@ if(valid){
                 <p className="leading-7 text-base md:text-lg mb-6">Nanlogical was founded with a vision to bridge the gap between imagination and reality. With a team of highly skilled and dedicated professionals, we have been at the forefront of the digital revolution, crafting exceptional software solutions that address complex challenges and fuel growth.</p>
                  <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 mt-6 justify-center lg:justify-start">
 
-        <button className="h-12 w-36 bg-[#ed502e] text-white text-lg rounded">
+        <button className="h-12 w-36 bg-[#ed502e] hover:bg-black text-white text-lg rounded">
           Contact Us
         </button>
 
@@ -202,8 +112,8 @@ if(valid){
 
     <section className="min-h-[38rem] p-8 bg-[#f5f5f5]">
   <div className="text-center mb-12">
-    <p className="text-[#213e6c] text-lg">OUR BUSINESS SERVICES</p>
-    <h1 className="text-[#213e6c] text-4xl font-bold">
+    <p className="text-[#ed502e] text-lg">OUR BUSINESS SERVICES</p>
+    <h1 className="text-[#ed502e] text-4xl font-bold">
       Your results are our top priority!
     </h1>
   </div>
@@ -229,8 +139,8 @@ if(valid){
    
     <SwiperSlide className="flex justify-center">
       <div className="group flex flex-col items-center h-[360px] w-full max-w-[280px]">
-        <div className="rounded-[65%_35%_44%_56%/35%_33%_63%_62%] w-[140px] h-[140px] group-hover:bg-[#1981cd] bg-[#efefef] border-2 border-black flex items-center justify-center mb-4">
-          <FaRegCheckCircle className="text-[#1981cd] h-[3rem] w-[5rem] group-hover:text-white" />
+        <div className="rounded-[65%_35%_44%_56%/35%_33%_63%_62%] w-[140px] h-[140px] group-hover:bg-[#f2664a] bg-[#efefef] border-2 border-black flex items-center justify-center mb-4">
+          <FaRegCheckCircle className="text-[#f2664a] h-[3rem] w-[5rem] group-hover:text-white" />
         </div>
         <h1 className="text-center text-xl font-semibold">Customized Solutions</h1>
         <p className=" text-center text-sm md:text-base">
@@ -242,8 +152,8 @@ if(valid){
 
     <SwiperSlide className="flex justify-center">
       <div className="group flex flex-col items-center h-[360px] w-full max-w-[280px]">
-        <div className="rounded-[65%_35%_44%_56%/35%_33%_63%_62%] w-[140px] h-[140px] group-hover:bg-[#1981cd] bg-[#efefef] border-2 border-black flex items-center justify-center mb-4">
-          <PiLightbulbFilament className="text-[#1981cd] h-[3rem] w-[5rem] group-hover:text-white" />
+        <div className="rounded-[65%_35%_44%_56%/35%_33%_63%_62%] w-[140px] h-[140px] group-hover:bg-[#f2664a] bg-[#efefef] border-2 border-black flex items-center justify-center mb-4">
+          <PiLightbulbFilament className="text-[#f2664a] h-[3rem] w-[5rem] group-hover:text-white" />
         </div>
         <h1 className="text-center text-xl font-semibold">Excellence in Innovation</h1>
         <p className="text-center text-sm md:text-base">
@@ -255,8 +165,8 @@ if(valid){
   
     <SwiperSlide className="flex justify-center">
       <div className="group flex flex-col items-center h-[360px] w-full max-w-[280px]">
-        <div className="rounded-[65%_35%_44%_56%/35%_33%_63%_62%] w-[140px] h-[140px] group-hover:bg-[#1981cd] bg-[#efefef] border-2 border-black flex items-center justify-center mb-4">
-          <MdSecurity className="text-[#1981cd] h-[3rem] w-[5rem] group-hover:text-white" />
+        <div className="rounded-[65%_35%_44%_56%/35%_33%_63%_62%] w-[140px] h-[140px] group-hover:bg-[#f2664a] bg-[#efefef] border-2 border-black flex items-center justify-center mb-4">
+          <MdSecurity className="text-[#f2664a] h-[3rem] w-[5rem] group-hover:text-white" />
         </div>
         <h1 className="text-center text-xl font-semibold">Security & Reliability</h1>
         <p className="text-center text-sm md:text-base">
@@ -268,8 +178,8 @@ if(valid){
     
     <SwiperSlide className="flex justify-center">
       <div className="group flex flex-col items-center h-[360px] w-full max-w-[280px]">
-        <div className="rounded-[65%_35%_44%_56%/35%_33%_63%_62%] w-[140px] h-[140px] group-hover:bg-[#1981cd] bg-[#efefef] border-2 border-black flex items-center justify-center mb-4">
-          <FaGamepad  className="text-[#1981cd] h-[3rem] w-[5rem] group-hover:text-white" />
+        <div className="rounded-[65%_35%_44%_56%/35%_33%_63%_62%] w-[140px] h-[140px] group-hover:bg-[#f2664a] bg-[#efefef] border-2 border-black flex items-center justify-center mb-4">
+          <FaGamepad  className="text-[#f2664a] h-[3rem] w-[5rem] group-hover:text-white" />
         </div>
         <h1 className="text-center text-xl font-semibold">Agile Development Methodology</h1>
         <p className=" text-center text-sm md:text-base">
@@ -280,8 +190,8 @@ if(valid){
 
     <SwiperSlide className="flex justify-center">
       <div className="group flex flex-col items-center h-[360px] w-full max-w-[280px]">
-        <div className="rounded-[65%_35%_44%_56%/35%_33%_63%_62%] w-[140px] h-[140px] group-hover:bg-[#1981cd] bg-[#efefef] border-2 border-black flex items-center justify-center mb-4">
-          <FaHeadset className="text-[#1981cd] h-[3rem] w-[5rem] group-hover:text-white" />
+        <div className="rounded-[65%_35%_44%_56%/35%_33%_63%_62%] w-[140px] h-[140px] group-hover:bg-[#f2664a] bg-[#efefef] border-2 border-black flex items-center justify-center mb-4">
+          <FaHeadset className="text-[#f2664a] h-[3rem] w-[5rem] group-hover:text-white" />
         </div>
         <h1 className="text-center text-xl font-semibold">Dedicated Support & Maintenance</h1>
         <p className="text-center text-sm md:text-base">
@@ -293,8 +203,8 @@ if(valid){
 
     <SwiperSlide className="flex justify-center">
       <div className="group flex flex-col items-center h-[360px] w-full max-w-[280px]">
-        <div className="rounded-[65%_35%_44%_56%/35%_33%_63%_62%] w-[140px] h-[140px] group-hover:bg-[#1981cd] bg-[#efefef] border-2 border-black flex items-center justify-center mb-4">
-          <GiTrophyCup className="text-[#1981cd] h-[3rem] w-[5rem] group-hover:text-white" />
+        <div className="rounded-[65%_35%_44%_56%/35%_33%_63%_62%] w-[140px] h-[140px] group-hover:bg-[#f2664a] bg-[#efefef] border-2 border-black flex items-center justify-center mb-4">
+          <GiTrophyCup className="text-[#f2664a] h-[3rem] w-[5rem] group-hover:text-white" />
         </div>
         <h1 className="text-center text-xl font-semibold">Proven Track Record</h1>
         <p className=" text-center text-sm md:text-base text-center">
@@ -306,8 +216,8 @@ if(valid){
 
     <SwiperSlide className="flex justify-center">
       <div className="group flex flex-col items-center h-[360px] w-full max-w-[280px]">
-        <div className="rounded-[65%_35%_44%_56%/35%_33%_63%_62%] w-[140px] h-[140px] group-hover:bg-[#1981cd] bg-[#efefef] border-2 border-black flex items-center justify-center mb-4">
-          <CiGrid32 className="text-[#1981cd] h-[3rem] w-[5rem] group-hover:text-white" />
+        <div className="rounded-[65%_35%_44%_56%/35%_33%_63%_62%] w-[140px] h-[140px] group-hover:bg-[#f2664a] bg-[#efefef] border-2 border-black flex items-center justify-center mb-4">
+          <CiGrid32 className="text-[#f2664a] h-[3rem] w-[5rem] group-hover:text-white" />
         </div>
         <h1 className="text-center text-xl font-semibold">User-Centric Design</h1>
         <p className=" text-center text-sm md:text-base text-center">
@@ -502,139 +412,234 @@ Marketing
     </div>
 
   
-    <div className="flex-1 bg-white p-6 md:p-8 rounded-lg shadow-md">
-      <h1 className="text-3xl md:text-4xl lg:text-5xl text-[#213e6c] font-bold mb-6">
-        Contact Form
-      </h1>
+   {/* Contact Form */}
+          <div className="w-full max-w-3xl bg-white p-8 sm:p-12 rounded-2xl shadow-md">
 
-   <form
-  className="space-y-4"
-  onSubmit={(e) => {
-    e.preventDefault();
-    validateForm();
-  }}
->
+            <h2 className="text-sm font-bold text-gray-700 mb-5">
+              CONTACT US
+            </h2>
 
-<div className="flex flex-col md:flex-row gap-4">
+            <p className="text-2xl md:text-3xl font-bold text-[#f04c41] mb-5">
+              Have questions? <br />
+              Get in touch!
+            </p>
 
-<div className="flex-1">
-<label className="text-base md:text-lg mb-2 block">
-<IoPersonOutline className="inline text-[#ed502e] mr-2"/>
-Your Name
-</label>
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
 
-<input
-type="text"
-placeholder="Enter Your Name"
-value={name}
-onChange={(e)=>setName(e.target.value)}
-className="w-full p-3 h-12 md:h-14 rounded-lg border-2 border-[#c2c2c2] focus:border-[#ed502e] outline-none"
-/>
+              {/* Name + Email */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
-{nameError && <p className="text-red-500 text-sm"> Your Name</p>}
-{nameLenError && <p className="text-red-500 text-sm">Name Must Contain 3 Char</p>}
+                {/* Name */}
+                <div>
+                  <label className="block text-sm font-medium  text-gray-700 mb-2">
+                    Name *
+                  </label>
 
-</div>
+                  <div className="relative">
+              <User
+                className={`absolute left-3 top-4  ${
+                  errors.name ? "text-red-500" : "text-[#f04c41]"
+                }`}
+                size={18}
+              />
 
-<div className="flex-1">
-<label className="text-base md:text-lg mb-2 block">
-<FaPhoneAlt className="inline text-[#ed502e] mr-2"/>
-Your Number
-</label>
+              <input
+                {...register("name", {
+                  required: "Name is required",
+                  minLength: {
+                    value: 3,
+                    message: "Name must be at least 3 characters"
+                  }
+                })}
+                type="text"
+                placeholder="Enter your name"
+                className={`w-full pl-10 pr-4 py-3 rounded-lg border text-gray-500 focus:outline-none
+                ${
+                  errors.name
+                    ? " border-red-500"
+                    : " border-gray-300"
+                }`}
+              />
+            </div>
 
-<input
-type="number"
-placeholder="Enter Your Number"
-value={number}
-onChange={(e)=>setNumber(e.target.value)}
-className="w-full p-3 h-12 md:h-14 rounded-lg border-2 border-[#c2c2c2] focus:border-[#ed502e] outline-none"
-/>
-
-{numberError && <p className="text-red-500 text-sm"> Your Phone Number</p>}
-{numberLenError && <p className="text-red-500 text-sm">Must be 10 digits</p>}
-
-</div>
-
-</div>
-
-<div>
-<label className="text-base md:text-lg mb-2 block">
-<HiOutlineMail className="inline text-[#ed502e] mr-2"/>
-Your Email
-</label>
-
-<input
-type="email"
-placeholder="Enter Your Email"
-value={email}
-onChange={(e)=>setEmail(e.target.value)}
-className="w-full p-3 h-12 md:h-14 rounded-lg border-2 border-[#c2c2c2] focus:border-[#ed502e] outline-none"
-/>
-
-{emailError && <p className="text-red-500 text-sm">Your Email</p>}
-{emailRegError && <p className="text-red-500 text-sm">Email Must Contain @ </p>}
-
-</div>
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.name.message}
+              </p>
+            )}
+          </div>
 
 
+                {/* Email */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Email *
+            </label>
 
-<div>
-<label className="text-base md:text-lg mb-2 block">
-<SiMainwp className="inline text-[#ed502e] mr-2"/>
-Your Subject
-</label>
+            <div className="relative">
+              <Mail
+                className={`absolute left-3 top-4 ${
+                  errors.email ? "text-red-500" : "text-[#f04c41]"
+                }`}
+                size={18}
+              />
 
-<input
-type="text"
-placeholder="Enter Your Subject"
-value={subject}
-onChange={(e)=>setSubject(e.target.value)}
-className="w-full p-3 h-12 md:h-14 rounded-lg border-2 border-[#c2c2c2] focus:border-[#ed502e] outline-none"
-/>
+              <input
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^\S+@\S+$/i,
+                    message: "Invalid email address"
+                  }
+                })}
+                type="email"
+                placeholder="Enter your email"
+                className={`w-full pl-10 pr-4 py-3 rounded-lg border text-gray-500 focus:outline-none
+                ${
+                  errors.email
+                    ? " border-red-500"
+                    : " border-gray-300"
+                }`}
+              />
+            </div>
 
-{subjectError && (
-<p className="text-red-500 text-sm">
-Subject must contain 5 – 20 words
-</p>
-)}
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.email.message}
+              </p>
+            )}
+          </div>
+        </div>
+        
+         {/* Phone */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Phone *
+          </label>
 
-</div>
+          <div className="relative">
+            <Phone
+              className={`absolute left-3 top-4 ${
+                errors.phone ? "text-red-500" : "text-[#f04c41]"
+              }`}
+              size={18}
+            />
 
+            <input
+              {...register("phone", {
+                required: "Phone number is required",
+                pattern: {
+                  value: /^[0-9]{10}$/,
+                  message: "Phone number must be 10 digits"
+                }
+              })}
+              type="tel"
+              placeholder="Enter your number"
+              className={`w-full pl-10 pr-4 py-3 rounded-lg border text-gray-500  focus:outline-none
+              ${
+                errors.phone
+                  ? " border-red-500"
+                  : " border-gray-300"
+              }`}
+            />
+          </div>
 
-<div>
-<label className="text-base md:text-lg mb-2 block">
-<FaPenAlt className="inline text-[#ed502e] mr-2"/>
-Your Message
-</label>
+          {errors.phone && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.phone.message}
+            </p>
+          )}
+        </div>
 
-<textarea
-placeholder="Enter Your Message"
-value={message}
-onChange={(e)=>setMessage(e.target.value)}
-className="w-full p-3 h-32 md:h-40 rounded-lg border-2 border-[#c2c2c2] focus:border-[#ed502e] outline-none resize-none"
-/>
+        {/* Subject */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Subject
+          </label>
 
-{messageError && (
-<p className="text-red-500 text-sm">
-Message must contain 10 – 60 words
-</p>
-)}
+          <div className="relative">
+            <Info className="absolute left-3 top-4 text-[#f04c41]" size={18} />
 
-</div>
+            <input
+              {...register("subject")}
+              type="text"
+              placeholder="Enter subject"
+              className="w-full pl-10 pr-4 py-3 rounded-lg border text-gray-500  border-gray-300 focus:outline-none"
+            />
+          </div>
+        </div>
 
+        {/* Message */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Message *
+          </label>
 
-<button
-type="submit"
-className="w-full h-12 md:h-14 bg-[#ed502e] text-white rounded-lg flex items-center justify-center gap-2 hover:bg-[#d94425] transition"
->
-<FiSend/>
-Send Your Message
-</button>
+          <div className="relative">
+            <Pencil
+              className={`absolute left-4 top-4 ${
+                errors.message ? "text-red-500" : "text-[#f04c41]"
+              }`}
+              size={18}
+            />
 
+            <textarea
+              {...register("message", {
+                required: "Message is required",
+                minLength: {
+                  value: 10,
+                  message: "Message must be at least 10 characters"
+                }
+              })}
+              rows={4}
+              placeholder="How Can We Help You? Feel free to get in touch!"
+              className={`w-full pl-12 pr-4 py-3 rounded-lg  border resize-none text-gray-500 focus:outline-none
+              ${
+                errors.message
+                  ? " border-red-500"
+                  : " border-gray-300"
+              }`}
+            ></textarea>
+          </div>
 
+          {errors.message && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.message.message}
+            </p>
+          )}
+        </div>
 
-</form>
-    </div>
+        {/* Checkbox */}
+        <div>
+          <label className="flex items-start gap-2 text-sm text-gray-600">
+            <input
+              type="checkbox"
+              {...register("agree", {
+                required: "You must agree before submitting"
+              })}
+            />
+            I agree that my data is collected and stored.
+          </label>
+
+          {errors.agree && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.agree.message}
+            </p>
+          )}
+        </div>
+
+        {/* Button */}
+        <button
+          type="submit"
+          className="flex items-center gap-2 bg-[#f04c41] hover:bg-red-600 text-white px-6 py-3 rounded-lg transition"
+        >
+          <Send size={18} />
+          Get In Touch
+        </button>
+
+      </form>
+
+          </div>
 
   </div>
 </section>

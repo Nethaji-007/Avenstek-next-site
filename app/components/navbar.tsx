@@ -43,73 +43,22 @@ const [openMenu, setOpenMenu] = useState(false);
     <header className="fixed top-0 left-0 w-full z-50">
 
   
-       {/* <div className="max-w-[1200px] mx-auto px-4 ">
-
-
-        <div className="hidden lg:flex max-w-[1200px] mx-auto bg-[#f04c41] text-[#ffff] text-sm px-6 py-2 flex justify-between items-center rounded-t-md ">
-
-        
-          <div className="flex items-center gap-6"> 
-
-            <div className="flex items-center gap-2">
-              <Clock size={16} />
-              <span>Sun - Fri (9 AM - 6 PM)</span>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <Phone size={16} />
-              <span>+91 88387 50579</span>
-            </div>
-
-            <div className="hidden md:flex items-center gap-2">
-              <MapPin size={16} />
-              <span>16, Deivanayagam St, Nungambakkam</span>
-            </div>
-
-          </div>
-
-        
-          
-
-          <div className="flex items-center gap-4">
-
-  <div className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:text-[#f04c41] transition cursor-pointer">
-    <Facebook size={16} />
-  </div>
-
-  <div className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:text-[#f04c41] transition cursor-pointer">
-    <Twitter size={16} />
-  </div>
-
-  <div className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:text-[#f04c41] transition cursor-pointer">
-    <Instagram size={16} />
-  </div>
-
-  <div className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:text-[#f04c41] transition cursor-pointer">
-    <Globe size={16} />
-  </div>
-
-  <span className="hidden md:block">English</span>
-  <span className="hidden md:block">USD</span>
-
-</div>
-
-        </div>
-      </div> */}
-
+      <div
+  className={`w-full fixed left-0 transition-all duration-500 ${
+    scrolled ? "top-3" : "top-0"
+  } ${
+    openMenu ? "opacity-0 -translate-y-5 pointer-events-none" : "opacity-100"
+  }`}
+>
 
       
+ 
 
 
 
-<div
-      className={`w-full z-50 gap-2 transition-all duration-300 ${
-        scrolled ? "fixed top-0 left-0 navbar-slide" : ""
-      }`}
-    >
       <div className="max-w-[1200px]  mx-auto px-4">
 
-        <div className="bg-white shadow-lg px-6 py-4 flex items-center justify-between rounded-md">
+        <div className="bg-white shadow-xl px-6 py-6 flex items-center justify-between rounded-md">
 
         
           <Image
@@ -120,35 +69,57 @@ const [openMenu, setOpenMenu] = useState(false);
           />
 
           {/* Menu */}
-        <nav
-  className={`hidden lg:flex  items-center gap-10 text-[15px] font-semibold tracking-[0.5px] text-[#0c1e35] ${poppins.className}`}
+        <nav className={`hidden lg:flex  items-center gap-10 text-[15px] font-semibold tracking-[0.5px] text-[#0c1e35] ${poppins.className}`}>
+  <Link
+  href="/"
+  className="relative group !text-[#0c1e35] hover:!text-[#f04c41] transition-colors duration-300"
+  >
+  Home
+  <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+</Link>
+
+<Link
+  href="/about "
+  className="relative group !text-[#0c1e35] hover:!text-[#f04c41] transition-colors duration-300"
 >
+  About Us
+  <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+</Link>
 
-  <Link href="/" className="relative group transition-colors hover:text-[#f04c41]">
-    Home
-    <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-  </Link>
+  <Link
+  href="/services"
+  className="relative group !text-[#0c1e35] hover:!text-[#f04c41] transition-colors duration-300"
+>
+  Our Services
+  <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+</Link>
 
-  <Link href="/about" className="relative group transition-colors hover:text-[#f04c41]">
-    About Us
-    <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-  </Link>
+ 
 
-  <Link href="/services" className="relative group transition-colors hover:text-[#f04c41]">
-    Our Service
-    <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-  </Link>
+  <Link
+  href="/projects"
+  className="relative group !text-[#0c1e35] hover:!text-[#f04c41] transition-colors duration-300"
+>
+  projects
+  <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+</Link>
 
-  <Link href="/contact" className="relative group transition-colors hover:text-[#f04c41]">
-    Contact
-    <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-  </Link>
+  <Link
+  href="/career"
+  className="relative group !text-[#0c1e35] hover:!text-[#f04c41] transition-colors duration-300"
+>
+  Career
+  <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+</Link>
 
-  <Link href="/projects" className="relative group transition-colors hover:text-[#f04c41]">
-    Project
-    <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-  </Link>
 
+<Link
+  href="/contact"
+  className="relative group !text-[#0c1e35] hover:!text-[#f04c41] transition-colors duration-300"
+>
+  Contact
+  <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+</Link>
 </nav>
         
 
@@ -247,27 +218,42 @@ const [openMenu, setOpenMenu] = useState(false);
       <hr className="border-gray-200 mb-6" />
 
       {/* Menu Links */}
-      <nav className="flex flex-col gap-4 text-lg font-semibold text-gray-800 mb-6">
-        <Link href="/" className="hover:text-[#f04c41] cursor-pointer">
-              Home
-            </Link>
+       <nav className={`flex flex-col gap-4 text-lg font-semibold mb-6 ${poppins.className}`}>
 
-            <Link href="/about" className="hover:text-[#f04c41] cursor-pointer">
-              About Us
-            </Link>
+  <Link href="/" className="relative group inline-block w-fit !text-[#0c1e35] hover:!text-[#f04c41] transition-colors duration-300">
+    Home
+    <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+  </Link>
 
-            <Link href="/services" className="hover:text-[#f04c41] cursor-pointer">
-              Our Service
-            </Link>
+  <Link href="/about" className="relative group inline-block w-fit !text-[#0c1e35] hover:!text-[#f04c41] transition-colors duration-300">
+    About Us
+    <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+  </Link>
 
-            <Link href="/contact" className="hover:text-[#f04c41] cursor-pointer">
-              Contact
-            </Link>
+  <Link href="/services" className="relative group inline-block w-fit !text-[#0c1e35] hover:!text-[#f04c41] transition-colors duration-300">
+    Our Services
+    <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+  </Link>
 
-            <Link href="/projects" className="hover:text-[#f04c41] cursor-pointer">
-              Project
-            </Link>
-      </nav>
+ 
+
+  <Link href="/projects" className="relative group inline-block w-fit !text-[#0c1e35] hover:!text-[#f04c41] transition-colors duration-300">
+    Project
+    <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+  </Link>
+
+
+   <Link href="/career" className="relative group inline-block w-fit !text-[#0c1e35] hover:!text-[#f04c41] transition-colors duration-300">
+    Career
+    <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+  </Link>
+
+  <Link href="/contact" className="relative group inline-block w-fit !text-[#0c1e35] hover:!text-[#f04c41] transition-colors duration-300">
+    Contact
+    <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-[#f04c41] scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+  </Link>
+
+</nav>
 
       <hr className="border-gray-200 mb-4" />
 
@@ -299,88 +285,92 @@ const [openMenu, setOpenMenu] = useState(false);
   </> 
 )}
 
-
 {openMenu && (
-<>
-{/* Overlay */}
-<div
-  className="fixed inset-0 bg-black/40 z-40"
-  onClick={() => setOpenMenu(false)}
-></div>
-
-{/* SIDEBAR CONTAINER */}
-<div className="lg:hidden fixed top-0 right-0 h-full w-[320px] bg-white z-50 overflow-y-auto">
-
-  {/* MOBILE SIDEBAR */}
-  <div className="w-full p-6">
-
-    <button
+  <>
+    {/* BLUR OVERLAY */}
+    <div
+      className="fixed inset-0 bg-black/30 backdrop-blur-md z-40 transition-all duration-300"
       onClick={() => setOpenMenu(false)}
-      className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 font-semibold"
-    >
-      ✕
-    </button>
+    ></div>
 
-    {/* MENU */}
-    <nav className="flex flex-col gap-5 text-lg mt-10">
+    {/* SIDEBAR */}
+    <div className="lg:hidden fixed top-0 right-0 h-full w-[320px] bg-white z-50 shadow-xl transform transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] translate-x-0">
 
-      <Link href="/" className="flex justify-between border-b border-gray-300 py-3 hover:text-[#f04c41] transition">
-        <span>Home</span>
-        <span>+</span>
-      </Link>
+      <div className="p-6">
 
-      <Link href="/about" className="flex justify-between border-b border-gray-300 py-3 hover:text-[#f04c41] transition">
-        <span>About Us</span>
-        <span>+</span>
-      </Link>
+        {/* CLOSE BUTTON */}
+        <button
+          onClick={() => setOpenMenu(false)}
+          className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 hover:bg-[#f04c41] hover:text-white transition-all duration-300"
+        >
+          ✕
+        </button>
 
-      <Link href="/services" className="flex justify-between border-b border-gray-300 py-3 hover:text-[#f04c41] transition">
-        <span>Our Services</span>
-        <span>+</span>
-      </Link>
+        {/* MENU */}
+      <nav className="flex flex-col mt-10 divide-y divide-gray-200 ">
 
-      <Link href="/projects" className="flex justify-between border-b border-gray-300 py-3 hover:text-[#f04c41] transition">
-        <span>Projects</span>
-        <span>+</span>
-      </Link>
+  <Link href="/" className="flex justify-between items-center py-4 text-[#0c1e35] hover:text-[#f04c41] transition">
+    <span>Home</span>
+    <span>+</span>
+  </Link>
 
-      <Link href="/contact" className="flex justify-between border-b border-gray-300 py-3 hover:text-[#f04c41] transition">
-        <span>Contact</span>
-        <span>+</span>
-      </Link>
+  <Link href="/about" className="flex justify-between items-center py-4 text-[#0c1e35] hover:text-[#f04c41] transition">
+    <span>About Us</span>
+    <span>+</span>
+  </Link>
 
-    </nav>
+  <Link href="/services" className="flex justify-between items-center py-4 text-[#0c1e35] hover:text-[#f04c41] transition">
+    <span>Our Services</span>
+    <span>+</span>
+  </Link>
 
-    <hr className="border-gray-200 my-7" />
+  <Link href="/projects" className="flex justify-between items-center py-4 text-[#0c1e35] hover:text-[#f04c41] transition">
+    <span>Projects</span>
+    <span>+</span>
+  </Link>
 
-    {/* Find With Us */}
-    <p className="text-sm text-gray-600 mb-4 font-semibold">FIND WITH US</p>
+  <Link href="/career" className="flex justify-between items-center py-4 text-[#0c1e35] hover:text-[#f04c41] transition">
+    <span>Career</span>
+    <span>+</span>
+  </Link>
 
-    {/* Social Icons */}
-    <div className="flex gap-4">
+  <Link href="/contact" className="flex justify-between items-center py-4 text-[#0c1e35] hover:text-[#f04c41] transition">
+    <span>Contact</span>
+  
+  </Link>
 
-      <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-[#f04c41] hover:text-white transition-all duration-300">
-        <Facebook size={16} />
+</nav>
+
+        
+
+        {/* SOCIAL */}
+        <p className="text-sm  font-semibold text-gray-600 mt-20">
+          FIND WITH US
+        </p>
+
+        <div className="flex gap-4 mt-5">
+
+          <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-[#f04c41] hover:text-white transition-all duration-300">
+            <Facebook size={16} />
+          </div>
+
+          <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-[#f04c41] hover:text-white transition-all duration-300">
+            <Twitter size={16} />
+          </div>
+
+          <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-[#f04c41] hover:text-white transition-all duration-300">
+            <Instagram size={16} />
+          </div>
+
+          <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-[#f04c41] hover:text-white transition-all duration-300">
+            <Linkedin size={16} />
+          </div>
+
+        </div>
+
       </div>
-
-      <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-[#f04c41] hover:text-white transition-all duration-300">
-        <Twitter size={16} />
-      </div>
-
-      <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-[#f04c41] hover:text-white transition-all duration-300">
-        <Instagram size={16} />
-      </div>
-
-      <div className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 hover:bg-[#f04c41] hover:text-white transition-all duration-300">
-        <Globe size={16} />
-      </div>
-
     </div>
-
-  </div>
-
-</div>
-</>
+  </>
 )}
 
    

@@ -409,7 +409,30 @@ button:focus-visible {
   display: flex;
   align-items: center;
 }
+/* 🔴 Arrows color + size */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #ed502e !important;
+  transform: scale(0.7); /* 👈 makes arrow smaller */
+}
 
+/* Optional: reduce arrow icon size more precisely */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px !important; /* default ~24px */
+}
+
+/* 🔴 Pagination dots */
+.swiper-pagination-bullet {
+  background: #ed502e !important;
+  opacity: 0.5;
+}
+
+/* 🔴 Active dot */
+.swiper-pagination-bullet-active {
+  background: #ed502e !important;
+  opacity: 1;
+}
 .marquee {
   overflow: hidden;
   width: 100%;
