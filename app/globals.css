@@ -1,15 +1,10 @@
 @import "tailwindcss";
-
- 
-/* Prevent horizontal scroll */
 body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
- 
-/* Header Section */
 #project-header {
   display: flex;
   flex-direction: column;
@@ -22,26 +17,20 @@ body {
   background-repeat: no-repeat;
   text-align: center;
 }
- 
 .project-heading {
   font-weight: bold;
   font-size: 5rem;
-  /* color: black; */
 }
-
 a {
   text-decoration: none;
   color: grey;
 }
- 
 .home {
   color: orange;
 }
- 
 .pro {
   margin-left: 1rem;
 }
- 
 .pic-hold {
   width: 100%;
   height: 100%;
@@ -49,7 +38,6 @@ a {
   align-items: center;
   justify-content: center;
 }
- 
 .page-dot {
   width: 40px;
   height: 40px;
@@ -62,82 +50,55 @@ a {
   color: #555;
   transition: all 0.25s;
 }
- 
 .page-dot.active {
   background: #ff5f15;
   color: white;
 }
- 
 .page-dot:hover {
   background: #ff5f15;
   color: white;
 }
- 
-/* Focus Styles */
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid #ff5f15;
   outline-offset: 2px;
   border-radius: 6px;
 }
- 
 .portfolio-1,
 .portfolio-2,
-
 .portfolio-4,
 .portfolio-5,
 .portfolio-6,
 .portfolio-7 {
   width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+.portfolio-3 {
+  width: 100%;
   height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  display: block;
+}
+.portfolio-8,
+.portfolio-9,
+.portfolio-10 {
+  width: 100%;
+  height: 260px;
   object-fit: cover;
   border-radius: 6px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  
 }
 .portfolio-2,
+.portfolio-5,
 .portfolio-7 {
   margin-top: 1rem;
 }
- 
-.portfolio-5 {
-  margin-top: 1rem;
-}
- 
-.portfolio-8 {
-  height: 220px;
-  width: 420px;
-  object-fit: cover;
-  border-radius: 6px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
- 
-.portfolio-9 {
-  height: 220px;
-  width: 420px;
-  max-width: 420px;
-  object-fit: cover;
-  border-radius: 6px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
- 
-.portfolio-10 {
-  height: 220px;
-  width: 100%;
-  max-width: 420px;
-  object-fit: cover;
-  border-radius: 6px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* ── Card / overlay base ── */
 .hold-picture {
   position: relative;
   overflow: hidden;
@@ -145,7 +106,6 @@ button:focus-visible {
   display: inline-block;
   width: 100%;
 }
- 
 .hold-picture .overlay {
   position: absolute;
   inset: 0;
@@ -164,7 +124,6 @@ button:focus-visible {
   z-index: 1;
   opacity: 0;
 }
- 
 .hold-picture .overlay-content {
   transition: transform 0.35s ease, opacity 0.35s ease;
   transform: translateY(10px);
@@ -172,7 +131,6 @@ button:focus-visible {
   position: relative;
   z-index: 2;
 }
- 
 .overlay-tag {
   display: inline-block;
   background: rgba(255, 255, 255, 0.2);
@@ -185,7 +143,6 @@ button:focus-visible {
   border: 1px solid rgba(255, 255, 255, 0.35);
   margin-bottom: 3px;
 }
- 
 .overlay-title {
   color: #fff;
   margin: 0 0 3px 0;
@@ -193,8 +150,6 @@ button:focus-visible {
   font-size: 1.5rem;
   font-weight: 600;
 }
- 
-/* ── Arrow icon ── */
 .icon {
   position: absolute;
   top: 1.5rem;
@@ -215,18 +170,15 @@ button:focus-visible {
   opacity: 0;
   z-index: 2;
 }
- 
 .icon:hover {
   background: #ff5f15;
   border-color: #ff5f15;
   color: #ffffff;
 }
-.header2{
+.header2 {
   padding: 7rem;
 }
-
-/* ── Mobile (320px – 768px): always show overlay ── */
-@media screen and (min-width: 320px) and (max-width: 768px) {
+@media screen and (max-width: 1023px) {
   .hold-picture .overlay {
     opacity: 1;
   }
@@ -238,8 +190,6 @@ button:focus-visible {
     opacity: 1;
   }
 }
-
-/* ── Desktop (1024px and above): show overlay only on hover ── */
 @media screen and (min-width: 1024px) {
   .hold-picture:hover .overlay {
     opacity: 1;
@@ -252,12 +202,6 @@ button:focus-visible {
     opacity: 1;
   }
 }
-
-/* ══════════════════════════════════════
-   RESPONSIVE MARGINS
-══════════════════════════════════════ */
-
-/* ── 320px ── */
 @media screen and (min-width: 320px) and (max-width: 424px) {
   .projects {
     padding: 0;
@@ -265,35 +209,24 @@ button:focus-visible {
     overflow-x: hidden;
   }
   #project-header {
-    /* padding: 1rem; */
     margin: 0;
   }
   .project-heading {
     font-size: 2rem;
   }
-  .portfolio-8,
-  .portfolio-9,
-  .portfolio-10 {
+  .portfolio-1,
+  .portfolio-2,
+  .portfolio-4,
+  .portfolio-5,
+  .portfolio-6,
+  .portfolio-7 {
+    height: 200px;
+    object-fit: cover;
+  }
+  .portfolio-3 {
+    height: auto;
     width: 100%;
-    height: 180px;
-    max-width: 100%;
-    /* margin-bottom: 0.75rem; */
-  }  
-}
-
-/* ── 425px ── */
-@media screen and (min-width: 425px) and (max-width: 767px) {
-  .projects {
-    padding: 0;
-    margin: 0 auto;
-    overflow-x: hidden;
-  }
-  #project-header {
-    /* padding: 1rem; */
-    margin: 0;
-  }
-  .project-heading {
-    font-size: 2.5rem;
+    object-fit: contain;
   }
   .portfolio-8,
   .portfolio-9,
@@ -301,86 +234,158 @@ button:focus-visible {
     width: 100%;
     height: 200px;
     max-width: 100%;
-    /* margin-bottom: 1rem; */
+  }
+  .pic-hold {
+    padding: 0.5rem;
   }
 }
-
-/* ── 768px ── */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  .projects {
+    padding: 0;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+  #project-header {
+    margin: 0;
+  }
+  .project-heading {
+    font-size: 2.5rem;
+  }
+  .portfolio-1,
+  .portfolio-2,
+  .portfolio-4,
+  .portfolio-5,
+  .portfolio-6,
+  .portfolio-7 {
+    height: 220px;
+    object-fit: cover;
+  }
+  .portfolio-3 {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+  }
   .portfolio-8,
   .portfolio-9,
   .portfolio-10 {
     width: 100%;
-    height: 210px;
+    height: 220px;
     max-width: 100%;
-    /* margin-bottom: 1rem; */
-  }   
+  }
+  .pic-hold {
+    padding: 0.6rem;
+  }
 }
-
-/* ── 1440px (Large Desktop) ── */
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .portfolio-1,
+  .portfolio-2,
+  .portfolio-4,
+  .portfolio-5,
+  .portfolio-6,
+  .portfolio-7 {
+    height: 240px;
+  }
+  .portfolio-3 {
+    height: 500px;
+    object-fit: cover;
+  }
+  .portfolio-8,
+  .portfolio-9,
+  .portfolio-10 {
+    width: 100%;
+    height: 230px;
+    max-width: 100%;
+  }
+  .pic-hold {
+    padding: 0.8rem;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
   .projects {
     max-width: 1400px;
     margin: 0 auto;
   }
-
   .header-pic {
     gap: 24px;
     padding: 20px 40px;
   }
-
   .header2-pic {
     gap: 24px;
     padding: 20px 40px;
   }
-
   .pic-hold {
     padding: 0;
   }
-
+  .portfolio-1,
+  .portfolio-2,
+  .portfolio-4,
+  .portfolio-5,
+  .portfolio-6,
+  .portfolio-7 {
+    height: 220px;
+  }
+  .portfolio-3 {
+    height: 460px;
+    object-fit: cover;
+  }
   .portfolio-8,
   .portfolio-9,
   .portfolio-10 {
-    height: 240px;
+    height: 260px;
     width: 100%;
     max-width: 100%;
   }
-
   .project-heading {
     font-size: 5rem;
   }
- 
   .container {
     max-width: 1400px !important;
     width: 100%;
   }
-
 }
-/* ── 1024px ── */
-@media screen and (min-width: 1023px) and (max-width: 1439px) {
+@media screen and (min-width: 1440px) {
+  .projects {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .header-pic {
+    gap: 24px;
+    padding: 20px 40px;
+  }
+  .header2-pic {
+    gap: 24px;
+    padding: 20px 40px;
+  }
+  .pic-hold {
+    padding: 0;
+  }
+  .portfolio-1,
+  .portfolio-2,
+  .portfolio-4,
+  .portfolio-5,
+  .portfolio-6,
+  .portfolio-7 {
+    height: 240px;
+  }
+  .portfolio-3 {
+    height: 500px;
+    object-fit: cover;
+  }
   .portfolio-8,
   .portfolio-9,
   .portfolio-10 {
-    height: 220px;
-    /* margin-bottom: 1.25rem; */
+    height: 280px;
+    width: 100%;
+    max-width: 100%;
   }
-  .pagination {
-    margin-top: 3rem;
-    /* padding-bottom: 3rem; */
+  .project-heading {
+    font-size: 5rem;
+  }
+  .container {
+    max-width: 1600px !important;
+    width: 100%;
   }
 }
-
-/* ── 1440px and above ── */
-@media screen and (max-width: 768px) {
-  .pic-hold {
-    /* margin-bottom: 1.5rem;
-     */
-   padding: 0.8rem;
-  }
-  
-}
-
-/* ── Pagination arrows ── */
 .carousel-arrow {
   width: 44px;
   height: 44px;
@@ -396,39 +401,28 @@ button:focus-visible {
   transition: all 0.25s;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
- 
 .carousel-arrow:hover {
   background: #ff5f15;
   border-color: #ff5f15;
   color: white;
 }
-
-
-
 .swiper-wrapper {
   display: flex;
   align-items: center;
 }
-/* 🔴 Arrows color + size */
 .swiper-button-prev,
 .swiper-button-next {
   color: #ed502e !important;
-  transform: scale(0.7); /* 👈 makes arrow smaller */
+  transform: scale(0.7);
 }
-
-/* Optional: reduce arrow icon size more precisely */
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  font-size: 18px !important; /* default ~24px */
+  font-size: 18px !important;
 }
-
-/* 🔴 Pagination dots */
 .swiper-pagination-bullet {
   background: #ed502e !important;
   opacity: 0.5;
 }
-
-/* 🔴 Active dot */
 .swiper-pagination-bullet-active {
   background: #ed502e !important;
   opacity: 1;
@@ -437,28 +431,20 @@ button:focus-visible {
   overflow: hidden;
   width: 100%;
 }
-
 .marquee-track {
   display: flex;
   width: max-content;
   animation: scroll 10s linear infinite;
 }
-
 .logo {
   width: 220px;
   height: 95px;
-  /* background: #f1f1f1;; */
   margin-right: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 @keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

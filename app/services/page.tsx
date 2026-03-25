@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef, useState } from "react";
 import {
   Globe,
@@ -173,7 +172,7 @@ export default function ServicesWithCounter() {
             return (
               <div
                 key={index}
-                className="bg-white p-8 shadow-sm hover:shadow-md transition duration-300"
+                className="bg-white p-8 shadow-sm hover:shadow-md hover:border-l-4 hover:border-[#f04c41] rounded-lg flex flex-col items-center text-center shadow-xl "
               >
                 <Icon className="w-12 h-12 mb-6 text-[#f04c41]" />
 
@@ -187,7 +186,7 @@ export default function ServicesWithCounter() {
 
                 <button
                   onClick={() => setActiveService(service)}
-                  className="group w-full flex items-center justify-between px-6 py-4 rounded-full border border-gray-300 text-sm font-medium transition-all duration-300 hover:text-[#f04c41] w-5 h-13"
+                  className="group w-full flex items-center justify-between px-6 py-4 rounded-full border border-gray-300 text-sm font-medium transition-all duration-300 hover:text-[#f04c41] w-5 h-13 "
                 >
                   <span>Read More</span>
 
