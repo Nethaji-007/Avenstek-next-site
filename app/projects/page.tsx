@@ -28,9 +28,9 @@ export default function Projects() {
       <div data-aos="fade-up" data-aos-duration="1000">
         <h1 className="project-heading white text-3xl sm:text-4xl sm:h-full w-full ">Our Projects</h1>
       </div>
-      <div className="mt-2" data-aos="flip-up" data-aos-duration="1000">
-         <a href="" className="">Home</a>
-         <a href="" className="pro ml-4">Projects</a>
+      <div className="mt-2 white" data-aos="flip-up" data-aos-duration="1000">
+         <a href="" className=" white ">Home</a>
+         <a href="" className="pro ml-4 white">Projects</a>
       </div>
     </section>
     <section>
@@ -62,7 +62,7 @@ export default function Projects() {
         </Col>
         <Col className="pic-hold flex:1">
         <div className="hold-picture" data-aos="fade-up" data-aos-duration="10">
-          <img className="portfolio-3 mt-0.1" src="project3.jpg" alt="Project 1"/>
+          <img className="portfolio-3 mt-2" src="project3.jpg" alt="Project 3"/>
            <div className="icon"><GoArrowUpRight/></div>
           <div className="overlay opacity-100 lg:opacity-0">
           <div className="overlay-content opacity-100 translate-y-0 lg:opacity-0 lg:translate-y-2">
@@ -73,9 +73,9 @@ export default function Projects() {
         </div>
         </Col>
         <Col className="pic-hold flex:1">
-        <div className="holdee2">
+        <div className="holdee2 mt-2 mb-1">
           <div className="hold-picture" data-aos="fade-up" data-aos-duration="10">
-          <img className="portfolio-4" src="project4.jpg" alt="Project 1"/>
+          <img className="portfolio-4 height-auto" src="project4.jpg" alt="Project 1"/>
            <div className="icon"><GoArrowUpRight/></div>
           <div className="overlay opacity-100 lg:opacity-0">
           <div className="overlay-content opacity-100 translate-y-0 lg:opacity-0 lg:translate-y-2">
@@ -85,7 +85,7 @@ export default function Projects() {
           </div>
          </div>
          <div className="hold-picture" data-aos="fade-up" data-aos-duration="10">
-          <img className="portfolio-5 mt-4" src="project5.jpg" alt="Project 1"/>
+          <img className="portfolio-5" src="project5.jpg" alt="Project 1"/>
            <div className="icon"><GoArrowUpRight/></div>
           <div className="overlay opacity-100 lg:opacity-0">
           <div className="overlay-content opacity-100 translate-y-0 lg:opacity-0 lg:translate-y-2">
@@ -97,7 +97,7 @@ export default function Projects() {
         </div>
         </Col>
         <Col className="pic-hold flex:1">
-          <div className="holdee3 display:flex flex-col items-center justify-center">
+          <div className="holdee3 display:flex flex-col items-center justify-center mb-4 mt-7">
             <div className="hold-picture" data-aos="fade-up" data-aos-duration="10">
               <img className="portfolio-6" src="project6.jpg" alt="Project 1"/>
               <div className="icon"><GoArrowUpRight/></div>
@@ -115,7 +115,7 @@ export default function Projects() {
                 <div className="overlay-content opacity-100 translate-y-0 lg:opacity-0 lg:translate-y-2">
                   <span className="overlay-tag">Infracture</span>
                   <h2 className="overlay-title">City Road Development Project</h2>
-                </div>
+                </div> 
               </div>
             </div>
           </div>
